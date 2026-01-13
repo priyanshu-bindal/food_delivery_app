@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Restaurant Menu Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec3713",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221310",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display">
+<!-- Top Navigation Bar -->
+<div class="fixed top-0 z-50 w-full flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between">
+<div class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center bg-white/10 rounded-full">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<div class="flex-1 px-4">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight text-center">The Gourmet Hub</h2>
+</div>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 items-center justify-center rounded-full bg-white/10 text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<!-- Main Content -->
+<main class="pb-32">
+<!-- Hero Header Image -->
+<div class="@container pt-16">
+<div class="@[480px]:px-4 @[480px]:py-3">
+<div class="bg-cover bg-center flex flex-col justify-end overflow-hidden bg-background-dark @[480px]:rounded-xl min-h-[320px] relative" data-alt="Interior of a luxury modern restaurant with warm lighting" style='background-image: linear-gradient(0deg, rgba(34, 19, 16, 1) 0%, rgba(34, 19, 16, 0.4) 40%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPeF4hj9j_NcMaUeZMOErlc4BjWvNVacdl7tCSWcgTUkhpC2nmrWWLbO3j9G7PWw7JQvkfB4KqcEr0vCilQgIm7tXdnrN3ObAPG_khUfI_Ec2CMbODGhEnegCH6tK2ceGd6fXrrowILF77FxHOKRTCWMby58P6FO2bgc4NOGJk_TqfWCQETZYPt4g713I_nxrRqJj-8jVKKwQjPlR_4_ieD3-raCbPes0B9KMa-pQTzvddK1dvLqURqcKCQxNCl_keepha4d6ovSI");'>
+<div class="flex flex-col p-6 gap-2">
+<div class="flex items-center gap-2">
+<span class="bg-primary px-2 py-1 rounded text-[10px] font-extrabold uppercase tracking-widest text-white">Top Rated</span>
+</div>
+<p class="text-white tracking-tight text-3xl font-extrabold leading-tight">The Gourmet Hub</p>
+<p class="text-slate-300 text-sm">Artisan Italian &amp; Mediterranean Cuisine</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Stats -->
+<div class="flex flex-wrap gap-3 px-4 py-6 -mt-4 relative z-10">
+<div class="flex min-w-[100px] flex-1 basis-[fit-content] flex-col gap-1 rounded-2xl border border-primary/20 bg-background-light dark:bg-background-dark p-3 items-center text-center shadow-lg">
+<div class="flex items-center gap-1 text-primary">
+<p class="tracking-tight text-xl font-bold leading-tight">4.5</p>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">Rating</p>
+</div>
+<div class="flex min-w-[100px] flex-1 basis-[fit-content] flex-col gap-1 rounded-2xl border border-primary/20 bg-background-light dark:bg-background-dark p-3 items-center text-center shadow-lg">
+<p class="text-slate-900 dark:text-white tracking-tight text-xl font-bold leading-tight">25</p>
+<div class="flex items-center gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">Mins</p>
+</div>
+</div>
+<div class="flex min-w-[100px] flex-1 basis-[fit-content] flex-col gap-1 rounded-2xl border border-primary/20 bg-background-light dark:bg-background-dark p-3 items-center text-center shadow-lg">
+<p class="text-slate-900 dark:text-white tracking-tight text-xl font-bold leading-tight">1.2</p>
+<div class="flex items-center gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">km away</p>
+</div>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 pb-4">
+<div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-4 py-3">
+<span class="material-symbols-outlined text-slate-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full text-white placeholder-slate-500" placeholder="Search for dishes..." type="text"/>
+</div>
+</div>
+<!-- Sticky Tabs -->
+<div class="sticky top-16 z-40 bg-background-light dark:bg-background-dark border-b border-primary/10">
+<div class="flex overflow-x-auto no-scrollbar px-4 gap-6">
+<a class="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-tight">Best Sellers</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-tight">Main Course</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-tight">Appetizers</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-tight">Desserts</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-tight">Drinks</p>
+</a>
+</div>
+</div>
+<!-- Menu Section: Best Sellers -->
+<section>
+<h2 class="text-slate-900 dark:text-white text-xl font-extrabold leading-tight tracking-tight px-4 pb-4 pt-6">Best Sellers</h2>
+<div class="flex flex-col gap-4 px-4">
+<!-- Item 1 -->
+<div class="flex gap-4 items-start p-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 shadow-sm">
+<div class="flex-1">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="material-symbols-outlined text-green-500 text-sm">fiber_manual_record</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Veg</span>
+</div>
+<h3 class="font-bold text-base text-slate-900 dark:text-white">Truffle Mushroom Risotto</h3>
+<p class="text-primary font-extrabold mt-1">$18.50</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-2 leading-relaxed line-clamp-2">Creamy arborio rice with seasonal wild mushrooms and white truffle oil drizzle.</p>
+</div>
+<div class="relative flex-shrink-0">
+<div class="size-24 rounded-xl bg-cover bg-center" data-alt="Gourmet mushroom risotto served in a dark ceramic bowl" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmQtXNgFp_CgW8QW2VgpT0WQvJZgNxmhq3bC4lwS-JpPtcpU2v_Ht9XBfXKAiukQiA46xZUEPO0ETkAkb3dbngWLc7BohFB5GdzxStM0tAhg18Opimy8-FRrqf-Q3gYR9KREibDFck2KAn_RUvRmfJVwmxcp8XQP_QcJQZsPKq6oh5xgVFtGP91B5LKLCU78thobKIYrA2M5DAVGCjXsRHqu1ZaVhOiSCWZ3w_5f4pj3W1gC_D_JCgLFIdSHJQ392lA-ZV0dujMAA');">
+</div>
+<button class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white dark:bg-background-dark border border-primary/30 px-6 py-1.5 rounded-full shadow-lg flex items-center gap-1 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="text-xs font-black uppercase">Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 items-start p-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 shadow-sm">
+<div class="flex-1">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="material-symbols-outlined text-red-500 text-sm">fiber_manual_record</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Non-Veg</span>
+</div>
+<h3 class="font-bold text-base text-slate-900 dark:text-white">Herb Crusted Salmon</h3>
+<p class="text-primary font-extrabold mt-1">$24.00</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs mt-2 leading-relaxed line-clamp-2">Atlantic salmon with a crispy herb crust, served with roasted asparagus.</p>
+</div>
+<div class="relative flex-shrink-0">
+<div class="size-24 rounded-xl bg-cover bg-center" data-alt="Grilled salmon with green garnish on a white plate" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAaGlC3bwsOdd4EPDrcRlKseUa_xKNK9obQ-1_GXeauyFzsJ66vzgmFjFcCPHaC8jFSo20nwE6VRw3nlXbj67_XfwJGUVF-yopBWY4O5SzE6vKZWH3sqCX92SbR8MompVQeS8qx70_NL9ZDifz8zLoFSVs-SssjpBMIRzKDmOQ9f63VEsRTaSeHs2oi2FgIpn2ioyrhSu4f5QQ3Jk0hu-60LL4MlAHVKScoMx04-xzwEFybf-73ugNQhgpRY2_1LVewjWhQJqN9K6w');">
+</div>
+<button class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1.5 rounded-full shadow-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-xs">remove</span>
+<span class="text-xs font-black">1</span>
+<span class="material-symbols-outlined text-xs">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Menu Section: Main Course -->
+<section>
+<h2 class="text-slate-900 dark:text-white text-xl font-extrabold leading-tight tracking-tight px-4 pb-4 pt-8">Main Course</h2>
+<div class="flex flex-col gap-1">
+<!-- Simple Row 1 -->
+<div class="px-4 py-4 flex justify-between items-center border-b border-primary/5">
+<div class="flex-1 pr-4">
+<h3 class="font-bold text-slate-900 dark:text-white">Penne Alla Vodka</h3>
+<p class="text-slate-500 text-xs mt-1">Classic tomato cream sauce with shallots.</p>
+<p class="text-primary font-bold mt-1">$16.00</p>
+</div>
+<button class="bg-white/5 border border-primary/30 p-2 rounded-full text-primary size-10 flex items-center justify-center">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- Simple Row 2 -->
+<div class="px-4 py-4 flex justify-between items-center border-b border-primary/5">
+<div class="flex-1 pr-4">
+<h3 class="font-bold text-slate-900 dark:text-white">Lamb Shank Confiti</h3>
+<p class="text-slate-500 text-xs mt-1">Slow roasted for 12 hours with root veggies.</p>
+<p class="text-primary font-bold mt-1">$32.00</p>
+</div>
+<button class="bg-white/5 border border-primary/30 p-2 rounded-full text-primary size-10 flex items-center justify-center">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Cart Bar -->
+<div class="fixed bottom-0 left-0 right-0 p-4 pb-8 z-50 pointer-events-none">
+<div class="max-w-md mx-auto pointer-events-auto">
+<div class="bg-primary rounded-full p-4 flex items-center justify-between shadow-2xl shadow-primary/40">
+<div class="flex items-center gap-3 pl-2">
+<div class="bg-white/20 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white">shopping_bag</span>
+</div>
+<div class="flex flex-col">
+<p class="text-white text-xs font-bold uppercase tracking-wider">1 Item Added</p>
+<p class="text-white font-extrabold">$24.00</p>
+</div>
+</div>
+<button class="flex items-center gap-2 bg-white text-primary px-6 py-2 rounded-full font-extrabold text-sm uppercase tracking-tight">
+                    View Cart
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

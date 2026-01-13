@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cart and Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec3713",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221310",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-white font-display">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl border-x border-white/5">
+<!-- TopAppBar -->
+<div class="sticky top-0 z-20 flex items-center bg-background-light dark:bg-background-dark p-4 pb-4 justify-between border-b border-white/10">
+<div class="text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Cart</h2>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto no-scrollbar pb-32">
+<!-- Items Section -->
+<div class="flex flex-col pt-4">
+<div class="px-4 mb-2">
+<p class="text-white/60 text-xs font-bold uppercase tracking-widest">Your Order</p>
+</div>
+<!-- ListItem 1 -->
+<div class="flex items-center gap-4 bg-transparent px-4 min-h-[72px] py-3 justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-16" data-alt="Gourmet butter chicken in a bowl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATsbjFh5ph2BAcdr_2bibT6-zmcBsVEMSI4TB8u8vC9dZtjjI9sZ6xg9gerIEKXQw-Kof4REXvK_Bm6LydJegr8ubfuTkRAcw42zbfew6Obt_ORGGe-Ij-jXfkKa6Y1M_RpHnwXvUk1zkuUskRs2Pw-dI_jN2G-lvEsmI053qeXrLVdNuhK8Dn0oM2EgABXPayjUCiSch2osHf75YTFQfR-UJPXBHiFxehvQqlG0nXmkm49NMAnmreZL4a4gVi4GbM3OBBKvyN6MM");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-white text-base font-bold leading-normal line-clamp-1">Butter Chicken</p>
+<p class="text-primary text-sm font-semibold leading-normal">$24.00</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex items-center gap-3 text-white bg-white/5 p-1 rounded-full border border-white/10">
+<button class="text-base font-bold flex h-8 w-8 items-center justify-center rounded-full bg-white/10 hover:bg-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="text-base font-bold w-4 p-0 text-center bg-transparent focus:outline-0 focus:ring-0 focus:border-none border-none [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" type="number" value="1"/>
+<button class="text-base font-bold flex h-8 w-8 items-center justify-center rounded-full bg-primary cursor-pointer">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ListItem 2 -->
+<div class="flex items-center gap-4 bg-transparent px-4 min-h-[72px] py-3 justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-16" data-alt="Fresh garlic naan pieces" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUNYLRKoCnaSmgg08-61OnRjI6w12w_jjgXuQ9WxpSk6Qs9mmt_nJHdeL4B2NsMq1nKco6uxOzcMcqtBbHoD0RhPNjfn11LaktMUjfxUivLiv1ZJiaOyYzxVyhnQjvK-4rZSi-GezBMjPIge0AnOGqZqMC4ImF6lyQ9CU2j8QbsnZCTI4S5g1Qqdaos_oQHzE1GZi5fBN7l5lg-F4kmSwi50AzD1ECAUmXYwigMlBdlaFlRxdaUK0qIRe5C76O0pjV9ipbqkXdeOI");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-white text-base font-bold leading-normal line-clamp-1">Garlic Naan</p>
+<p class="text-primary text-sm font-semibold leading-normal">$6.00</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex items-center gap-3 text-white bg-white/5 p-1 rounded-full border border-white/10">
+<button class="text-base font-bold flex h-8 w-8 items-center justify-center rounded-full bg-white/10 hover:bg-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="text-base font-bold w-4 p-0 text-center bg-transparent focus:outline-0 focus:ring-0 focus:border-none border-none [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" type="number" value="2"/>
+<button class="text-base font-bold flex h-8 w-8 items-center justify-center rounded-full bg-primary cursor-pointer">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Coupon Section -->
+<div class="p-4">
+<div class="flex flex-row items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/5 p-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">confirmation_number</span>
+</div>
+<div class="flex flex-col">
+<p class="text-white text-sm font-bold leading-tight">Apply Coupon</p>
+<p class="text-white/50 text-xs font-normal leading-normal">Save up to $10 more</p>
+</div>
+</div>
+<a class="text-sm font-bold leading-normal text-primary flex items-center gap-1" href="#">
+                        View All
+                        <span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Delivery Card -->
+<div class="p-4">
+<div class="flex items-stretch justify-between gap-4 rounded-xl bg-white/5 p-4 border border-white/10">
+<div class="flex flex-[2_2_0px] flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">home</span>
+<p class="text-white text-base font-bold leading-tight">Delivery to Home</p>
+</div>
+<p class="text-white/60 text-sm font-normal leading-tight">123 Street, New York, NY 10001</p>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-full h-8 px-4 bg-white/10 hover:bg-white/20 text-white text-xs font-bold leading-normal w-fit transition-all">
+<span>Edit Address</span>
+</button>
+</div>
+<div class="w-24 bg-center bg-no-repeat aspect-square bg-cover rounded-xl" data-alt="Map location in New York City" data-location="New York" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAGVlU5G_SQnsM1kEecy92xaWVz-fWmrBrbQ_a11ALzMZZEBBw7Jxwfnp-VZDKNhvLUlJDb2Us9yA76P0fADK8VWXqO5kQS1A86Dpg2pJKCK7LAXm86_D9fw6SHS1S88U1Hx30xaIT8JWgjyt_NG_h3NHvEoaJwuRoxVELrulTKDo5Hbt0qi0LCs0e2JvNcPx7SkzmqcBA2X7iYmRDskCalaqoq_cS_mnoxCdtSoW_TB4Vjlk-q-R3eQtf3TF2CDACTezBBVKHZYgE");'></div>
+</div>
+</div>
+<!-- Bill Summary -->
+<div class="p-4 mt-2">
+<p class="text-white/60 text-xs font-bold uppercase tracking-widest mb-4">Bill Summary</p>
+<div class="space-y-3 bg-white/5 rounded-xl p-5 border border-white/10">
+<div class="flex justify-between items-center text-sm">
+<span class="text-white/70">Item Total</span>
+<span class="text-white font-medium">$36.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-white/70">Delivery Fee</span>
+<span class="text-white font-medium">$2.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-white/70">Taxes and Charges</span>
+<span class="text-white font-medium">$1.50</span>
+</div>
+<div class="h-px bg-white/10 my-1"></div>
+<div class="flex justify-between items-center pt-1">
+<span class="text-white font-bold text-lg">Grand Total</span>
+<span class="text-primary font-bold text-xl">$39.50</span>
+</div>
+</div>
+</div>
+<!-- Cancellation Policy Note -->
+<div class="px-4 py-2">
+<div class="bg-primary/5 rounded-lg p-3 border border-primary/20">
+<p class="text-[10px] text-white/50 leading-relaxed">
+                        Avoid cancellations as they lead to food wastage. A 100% cancellation fee will apply to orders cancelled after 2 minutes of placement.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Bottom Payment Bar -->
+<div class="absolute bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark p-4 pb-8 border-t border-white/10 backdrop-blur-md bg-opacity-90">
+<button class="flex w-full cursor-pointer items-center justify-between overflow-hidden rounded-full h-14 px-6 bg-primary text-white text-base font-bold transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<div class="flex flex-col items-start">
+<span class="text-[10px] opacity-80 uppercase tracking-wider">Total</span>
+<span class="text-lg">$39.50</span>
+</div>
+<div class="flex items-center gap-2">
+<span>Proceed to Pay</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+</body></html>

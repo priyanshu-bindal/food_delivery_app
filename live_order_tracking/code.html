@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Order Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec3713",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221310",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-white antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl">
+<!-- Top Bar Navigation (Floating Over Map) -->
+<div class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-4 bg-gradient-to-b from-black/50 to-transparent">
+<button class="flex size-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-white">arrow_back_ios_new</span>
+</button>
+<div class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+<p class="text-xs font-bold uppercase tracking-widest text-white/80">Tracking Order</p>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-white">help_outline</span>
+</button>
+</div>
+<!-- Map Section (Top Half) -->
+<div class="relative flex-1 w-full bg-[#1a1a1a]">
+<div class="absolute inset-0 w-full h-full bg-center bg-cover" data-alt="Dark themed street map with delivery route" data-location="New York City" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAGVlU5G_SQnsM1kEecy92xaWVz-fWmrBrbQ_a11ALzMZZEBBw7Jxwfnp-VZDKNhvLUlJDb2Us9yA76P0fADK8VWXqO5kQS1A86Dpg2pJKCK7LAXm86_D9fw6SHS1S88U1Hx30xaIT8JWgjyt_NG_h3NHvEoaJwuRoxVELrulTKDo5Hbt0qi0LCs0e2JvNcPx7SkzmqcBA2X7iYmRDskCalaqoq_cS_mnoxCdtSoW_TB4Vjlk-q-R3eQtf3TF2CDACTezBBVKHZYgE");'>
+<!-- Delivery Route Overlay Mockup (Visual decoration) -->
+<svg class="absolute inset-0 w-full h-full opacity-60" viewbox="0 0 400 600">
+<path d="M 100 150 Q 200 200 250 400" fill="none" stroke="#ec3713" stroke-dasharray="8 4" stroke-width="4"></path>
+<!-- Restaurant Pin -->
+<circle cx="100" cy="150" fill="#ffffff" r="8" stroke="#ec3713" stroke-width="2"></circle>
+<!-- Delivery Partner Icon -->
+<g transform="translate(165, 185)">
+<circle class="animate-pulse" cx="0" cy="0" fill="#ec3713" r="16"></circle>
+<text fill="white" font-family="Material Symbols Outlined" font-size="20" x="-10" y="7">moped</text>
+</g>
+<!-- User Home Pin -->
+<g transform="translate(250, 400)">
+<circle cx="0" cy="0" fill="#ffffff" r="8" stroke="#000" stroke-width="2"></circle>
+<text class="filled-icon" fill="white" font-family="Material Symbols Outlined" font-size="24" x="-12" y="-15">home</text>
+</g>
+</svg>
+</div>
+</div>
+<!-- Order Status Bottom Sheet -->
+<div class="relative z-30 bg-background-dark rounded-t-xl shadow-[0_-10px_40px_rgba(0,0,0,0.5)] border-t border-white/5">
+<!-- Bottom Sheet Handle -->
+<div class="flex flex-col items-center pt-3 pb-1">
+<div class="h-1.5 w-12 rounded-full bg-white/20"></div>
+</div>
+<!-- ETA and Info -->
+<div class="px-6 py-4">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-white text-3xl font-bold leading-tight tracking-tight font-display">Arriving in 12 mins</h2>
+<p class="text-white/60 text-sm mt-1">Preparing your feast from <span class="text-primary font-semibold">Burger King</span></p>
+</div>
+<div class="bg-primary/20 p-3 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl">restaurant</span>
+</div>
+</div>
+</div>
+<!-- Progress Bar Section -->
+<div class="px-6 pb-6">
+<div class="flex flex-col gap-3">
+<div class="flex gap-6 justify-between items-end">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg filled-icon">check_circle</span>
+<p class="text-white text-base font-semibold leading-normal">Order Picked Up</p>
+</div>
+<p class="text-primary text-sm font-bold leading-normal">66%</p>
+</div>
+<!-- Progress Bar Container -->
+<div class="relative h-2.5 w-full rounded-full bg-white/10 overflow-hidden">
+<div class="absolute top-0 left-0 h-full rounded-full bg-primary" style="width: 66%;"></div>
+</div>
+<p class="text-white/50 text-xs font-medium uppercase tracking-wide">Next Step: Delivery to your doorstep</p>
+</div>
+</div>
+<!-- Delivery Partner Card -->
+<div class="mx-6 mb-6 p-4 rounded-lg bg-white/5 border border-white/5 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Delivery Partner" class="size-14 rounded-full object-cover border-2 border-primary/30" data-alt="Profile photo of delivery partner Rahul" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5uYI-cdfCmLzSQPTUZnkCUDC2caoaOt-OSSWzLg1_buvRnwB7rtFr4OXASqkkq8xqPIb7b32JleFL9Gv6CpDDCA3_wDw0M6nfcJVz8LUnCcEIgS7nUiuTS4FR-_KxUvtSr3UDjPp77d00ZpSjk3g0IZLLR2C14xV6klkd4hADsRvLffC4siltzm-XR14zX-ZfZ7j89VI4HVUG1LnW5r3rtua1b_alwvoYa5WFo3dedpujhWTdzMut4rBP-1E0Dx8tAdP2T2gV4Aw"/>
+<div class="absolute -bottom-1 -right-1 bg-green-500 size-4 rounded-full border-2 border-background-dark"></div>
+</div>
+<div>
+<p class="text-white font-bold text-lg">Rahul S.</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm filled-icon">star</span>
+<p class="text-white/70 text-sm font-medium">4.8 • Valued Partner</p>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex size-12 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined filled-icon">call</span>
+</button>
+</div>
+</div>
+<!-- iOS Home Indicator Spacing -->
+<div class="h-8"></div>
+</div>
+</div>
+</body></html>
