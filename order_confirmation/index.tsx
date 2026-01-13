@@ -22,11 +22,7 @@ const OrderConfirmationScreen: React.FC = () => {
     const pulseAnim = useRef(new Animated.Value(1)).current;
 
     useEffect(() => {
-        // Clear the cart as soon as we land here (or could be after animation)
-        // Doing it here ensures if they somehow go back, it's empty.
-        clearCart();
-
-        // 1. Entrance Animation
+        // 1. Entrance Animation first
         Animated.parallel([
             Animated.spring(scaleAnim, {
                 toValue: 1,

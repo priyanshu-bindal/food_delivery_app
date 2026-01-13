@@ -27,7 +27,7 @@ const CouponInput: React.FC = () => {
         </View>
       ) : (
         <TouchableOpacity
-          onPress={() => navigation.navigate('Offers')}
+          onPress={() => navigation.navigate('ApplyCoupons')}
           style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 16, borderRadius: 16, backgroundColor: 'rgba(255, 255, 255, 0.05)', padding: 16, borderWidth: 1, borderColor: 'rgba(255, 255, 255, 0.1)' }}
         >
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>

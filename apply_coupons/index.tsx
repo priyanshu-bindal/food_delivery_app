@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, ScrollView, Animated, Image, Dimensions, TextInput } from 'react-native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { useCartStore } from '../store/cartStore';
 import ScalePressable from '../components/ScalePressable';
 
@@ -39,6 +39,9 @@ const COUPONS = [
 
 const ApplyCouponsScreen: React.FC = () => {
     const navigation = useNavigation();
+    const route = useRoute();
+    // 'ApplyCoupons' is the stack route name (from Cart). 'Offers' is the tab route name.
+    const isApplyMode = route.name === 'ApplyCoupons';
     const { applyCoupon, appliedCoupon } = useCartStore();
 
     // Animation States
@@ -171,12 +174,24 @@ const ApplyCouponsScreen: React.FC = () => {
                                 {/* Action */}
                                 <TouchableOpacity
                                     onPress={() => {
-                                        handleApply(coupon, () => (navigation as any).navigate('Explore'), false);
+                                        if (isApplyMode) {
+                                            // From Cart: Apply and Go Back
+                                            handleApply(coupon, undefined, true);
+                                        } else {
+                                            // From Offers Tab: Apply and Go to Explore/Home
+                                            handleApply(coupon, () => (navigation as any).navigate('Explore'), false);
+                                        }
                                     }}
-                                    className="flex-row items-center gap-1 bg-[#ec3713]/10 px-3 py-1.5 rounded-lg border border-[#ec3713]/20"
+                                    className={`flex-row items-center gap-1 px-3 py-1.5 rounded-lg border ${isApplyMode ? 'bg-[#10b981]/10 border-[#10b981]/20' : 'bg-[#ec3713]/10 border-[#ec3713]/20'}`}
                                 >
-                                    <Text className="text-[#ec3713] font-bold text-xs uppercase tracking-wide">Order Now</Text>
-                                    <Ionicons name="arrow-forward" size={14} color="#ec3713" />
+                                    <Text className={`${isApplyMode ? 'text-[#10b981]' : 'text-[#ec3713]'} font-bold text-xs uppercase tracking-wide`}>
+                                        {isApplyMode ? 'Apply' : 'Order Now'}
+                                    </Text>
+                                    <Ionicons
+                                        name={isApplyMode ? "checkmark-circle" : "arrow-forward"}
+                                        size={14}
+                                        color={isApplyMode ? "#10b981" : "#ec3713"}
+                                    />
                                 </TouchableOpacity>
                             </View>
                         );

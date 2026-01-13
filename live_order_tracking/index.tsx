@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Animated, Dimensions, SafeAreaView, StatusBar, ImageBackground } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Animated, Dimensions, SafeAreaView, StatusBar, ImageBackground, BackHandler } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { RootStackParamList } from '../types';
+import { useToast } from '../context/ToastContext';
 
 // Components
 import OrderStatusTimeline from './components/OrderStatusTimeline';
@@ -15,11 +16,19 @@ const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 const LiveOrderTrackingScreen: React.FC = () => {
     const navigation = useNavigation<OrderTrackingScreenNavigationProp>();
+    const { showToast } = useToast();
 
     // Map Placeholder Pulse Animation
     const mapPulse = useRef(new Animated.Value(1)).current;
 
     useEffect(() => {
+        // Clear cart when tracking screen mounts (after confirmation)
+        // This prevents the flash of empty cart during navigation
+        const timer = setTimeout(() => {
+            const { clearCart } = require('../store/cartStore').useCartStore.getState();
+            clearCart();
+        }, 100);
+
         Animated.loop(
             Animated.sequence([
                 Animated.timing(mapPulse, {
@@ -34,10 +43,31 @@ const LiveOrderTrackingScreen: React.FC = () => {
                 }),
             ])
         ).start();
+
+        const backHandler = BackHandler.addEventListener('hardwareBackPress', handleBack);
+        return () => {
+            backHandler.remove();
+            clearTimeout(timer);
+        };
     }, []);
 
+    const isNavigating = useRef(false);
+
     const handleBack = () => {
-        navigation.goBack();
+        if (isNavigating.current) return true;
+        isNavigating.current = true;
+
+        // Show success message
+        showToast('Order placed successfully 🎉', 'success', 2000);
+
+        // Navigate to Orders tab using parent navigator
+        // This safely switches to the Orders tab without triggering RESET errors
+        const parent = navigation.getParent();
+        if (parent) {
+            parent.navigate('Orders');
+        }
+
+        return true;
     };
 
     return (

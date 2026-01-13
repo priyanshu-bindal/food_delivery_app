@@ -35,8 +35,8 @@ export const useAuthStore = create<AuthState>((set) => ({
                 set({
                     // ... inside loginWithGoogle ...
                     user: {
-                        name: "Priyanshu",
-                        email: "priyanshu@example.com",
+                        name: "Priyanshu Bindal",
+                        email: "priyanshu.bindal@example.com",
                         photo: require('../assets/avatar.jpg'), // Consistent avatar
 
                         isGuest: false,

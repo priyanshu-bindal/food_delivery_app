@@ -133,6 +133,7 @@ export type RootStackParamList = {
   OrderHistory: undefined;
   OrderDetails: { orderId: string };
   OrderConfirmation: undefined;
+  HelpSupport: undefined;
 };
 
 export type TabParamList = {

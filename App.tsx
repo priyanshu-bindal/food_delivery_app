@@ -23,6 +23,7 @@ import OrdersScreen from './orders_screen';
 import OrderConfirmationScreen from './order_confirmation';
 import ApplyCouponsScreen from './apply_coupons';
 import AuthScreen from './auth';
+import HelpSupportScreen from './help_support';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -37,6 +38,16 @@ function HomeStack() {
       <Stack.Screen name="OrderConfirmation" component={OrderConfirmationScreen} />
       <Stack.Screen name="OrderTracking" component={LiveOrderTrackingScreen} />
       <Stack.Screen name="ApplyCoupons" component={ApplyCouponsScreen} />
+    </Stack.Navigator>
+  );
+}
+
+// Profile Stack Navigator
+function ProfileStack() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Profile" component={UserProfileScreen} />
+      <Stack.Screen name="HelpSupport" component={HelpSupportScreen} />
     </Stack.Navigator>
   );
 }
@@ -151,8 +162,8 @@ export default function App() {
               }}
             />
             <Tab.Screen
-              name="Profile"
-              component={UserProfileScreen}
+              name="ProfileShim"
+              component={ProfileStack}
               options={{
                 tabBarLabel: 'PROFILE',
                 tabBarIcon: ({ color, size, focused }) => (

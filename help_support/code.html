@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Help and Support Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1f7af9",
+                        "background-light": "#f9fafb",
+                        "background-dark": "#212121",
+                        "surface-dark": "#2a2a2a",
+                        "surface-accent": "#333333",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto border-x border-gray-100 dark:border-zinc-800">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-surface-accent transition-colors cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-extrabold leading-tight tracking-tight flex-1 text-center pr-10 uppercase text-[0.8rem] tracking-widest">Support Center</h2>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto pb-32">
+<!-- Hero Search Section -->
+<div class="px-4 pt-6 pb-8">
+<h1 class="text-3xl font-extrabold mb-6 tracking-tight">How can we<br/><span class="text-primary">help you?</span></h1>
+<div class="relative">
+<label class="flex flex-col w-full">
+<div class="flex w-full h-14 items-stretch rounded-xl bg-white dark:bg-surface-dark shadow-sm border border-gray-100 dark:border-zinc-800 focus-within:ring-2 focus-within:ring-primary/50 transition-all">
+<div class="text-gray-400 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full flex-1 border-none bg-transparent focus:ring-0 text-base font-medium placeholder:text-gray-500 px-3" placeholder="Search topics, orders..." value=""/>
+</div>
+</label>
+</div>
+</div>
+<!-- Quick Actions - Contextual Recent Order -->
+<section class="mb-8">
+<div class="px-4 mb-4 flex justify-between items-end">
+<h3 class="text-white text-sm font-bold uppercase tracking-widest opacity-60">Quick Actions</h3>
+<span class="text-[10px] bg-primary/20 text-primary px-2 py-1 rounded-full font-bold">RECENT ORDER #9281</span>
+</div>
+<div class="px-4 space-y-3">
+<!-- Action Item 1 -->
+<div class="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-xl border border-gray-100 dark:border-zinc-800 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-white text-base font-bold">Where is my order?</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Estimated delivery in 12 mins</p>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+<!-- Action Item 2 -->
+<div class="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-xl border border-gray-100 dark:border-zinc-800 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">report_problem</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-white text-base font-bold">Report missing item</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Request a refund for missing contents</p>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Support Categories Grid -->
+<section class="mb-8">
+<div class="px-4 mb-4">
+<h3 class="text-white text-sm font-bold uppercase tracking-widest opacity-60">Categories</h3>
+</div>
+<div class="px-4 grid grid-cols-2 gap-3">
+<!-- Category Card -->
+<div class="bg-white dark:bg-surface-dark p-5 rounded-xl border border-gray-100 dark:border-zinc-800 hover:bg-surface-accent transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-3 block text-3xl">payments</span>
+<p class="font-bold text-sm">Payment Issues</p>
+</div>
+<!-- Category Card -->
+<div class="bg-white dark:bg-surface-dark p-5 rounded-xl border border-gray-100 dark:border-zinc-800 hover:bg-surface-accent transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-3 block text-3xl">currency_exchange</span>
+<p class="font-bold text-sm">Refunds</p>
+</div>
+<!-- Category Card -->
+<div class="bg-white dark:bg-surface-dark p-5 rounded-xl border border-gray-100 dark:border-zinc-800 hover:bg-surface-accent transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-3 block text-3xl">menu_book</span>
+<p class="font-bold text-sm">App Guide</p>
+</div>
+<!-- Category Card -->
+<div class="bg-white dark:bg-surface-dark p-5 rounded-xl border border-gray-100 dark:border-zinc-800 hover:bg-surface-accent transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-3 block text-3xl">shield_lock</span>
+<p class="font-bold text-sm">Account Safety</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Contact Section -->
+<footer class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-gray-100 dark:border-zinc-800 p-4 pb-8 space-y-3">
+<div class="flex items-center justify-between mb-2">
+<p class="text-xs font-bold uppercase tracking-widest text-gray-400">Still need help?</p>
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-background-dark bg-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Support agent portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPOsD4ahzrZHcRf4NzCGGqiJfbTE2z-buN_H0tyvh23m2uXQC6xG08KmkcNDkpY-VJ41sQDzdgXW5uIKjC9zi9sqSu6srNXWavXHZPDt6dVYON5lcNyb0trPwr2FfHmwj9YbEvNp1fX1OZD1Gkm11aJGQekhCdGGju46rfQpq609Isi8rNljgxTdNukNSBSc0pIaZVhzfp9RrlYW3nmzbMfsM84NjjGGK0pQ_ilXRvyJDDNgag2lfOpxaQ_wSoMCUSRNCPFTzhK6s"/>
+</div>
+<div class="size-6 rounded-full border-2 border-background-dark bg-indigo-500 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Support agent portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcuSUMqGDobf4uuMH5NZFg-4vgwdjnxKp2HdYhLFRtr0Llj8m0uvz7-rXpCFUhQ_8ZfCdpcPcIudknigJINqp7LGuckt2ylQAkcqri0ZbDgenbSugyGuCLdEN9PwZunDf8xqZv3peFmBJn3dDpAU0cUjtPFqCDO2ia9fdI04w6XtlmCImOVOeqDs5fcWwHfVFtyQ6hG5Pv4YKQ89pxnSmI93V3CIg2XQ6fyybp1TUpFmVqFGb-x2Q33CkcMAJVUVLzE7d_DoJjcmk"/>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-primary hover:bg-blue-600 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+                    Live Chat
+                </button>
+<button class="flex-1 bg-white dark:bg-surface-accent text-slate-900 dark:text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 border border-gray-100 dark:border-zinc-700 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px] text-primary">call</span>
+                    Call Support
+                </button>
+</div>
+</footer>
+</div>
+</body></html>

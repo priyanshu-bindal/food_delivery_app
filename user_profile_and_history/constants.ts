@@ -7,11 +7,11 @@ export const USER_PROFILE = {
 };
 
 export const MENU_ACTIONS = [
-    { id: '1', title: 'My Orders', icon: 'receipt-outline' },
-    { id: '2', title: 'Address Book', icon: 'location-outline' },
-    { id: '3', title: 'Payments & Refunds', icon: 'card-outline' },
-    { id: '4', title: 'Help & Support', icon: 'help-circle-outline' },
-    { id: '5', title: 'Settings', icon: 'settings-outline' },
+    { id: '1', title: 'My Orders', icon: 'receipt-outline', route: 'Orders' },
+    { id: '2', title: 'Address Book', icon: 'location-outline', route: 'AddressBook' },
+    { id: '3', title: 'Payments & Refunds', icon: 'card-outline', route: 'Payments' },
+    { id: '4', title: 'Help & Support', icon: 'help-circle-outline', route: 'HelpSupport' },
+    { id: '5', title: 'Settings', icon: 'settings-outline', route: 'Settings' },
 ];
 
 export const PAST_ORDERS = [
